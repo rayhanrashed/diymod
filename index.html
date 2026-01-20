@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What If Moderation Didn't Mean Suppression?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>What If Moderation Didn't Mean Suppression?<br>A Case for Personalized Content Transformation</h1>
+
+            <div style="font-size: 1.15rem; color: #555; margin-bottom: 1rem; font-family:var(--font-serif); font-style:normal;">
+                ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)
+            </div>
+
+            <div class="awards-section">
+                <div class="award-line">
+                    <i class="fas fa-trophy"></i> Best Poster Award (Michigan HCAI 2025)
+                </div>
+                <div class="award-line">
+                    <i class="fas fa-trophy"></i> Best Application of AI (Michigan AI Symposium 2025)
+                </div>
+            </div>
+
+            <div class="authors">
+                <div class="author-block">
+                    <div class="author-name">Rayhan Rashed</div>
+                    <div class="author-image"><img src="images/rayhan.png" alt="Rayhan Rashed"></div>
+                </div>
+                <div class="author-block">
+                    <div class="author-name">Farnaz Jahanbakhsh</div>
+                    <div class="author-image"><img src="images/farnaz.png" alt="Farnaz Jahanbakhsh"></div>
+                </div>
+            </div>
+            <div style="text-align: center; color: #888; font-size: 0.95rem;">University of Michigan</div>
+
+            <div class="publication-links">
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2509.22861" target="_blank" class="button">
+                        <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2509.22861" target="_blank" class="button">
+                        <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                    <a href="#" class="button">
+                        <span class="icon"><i class="fas fa-file-image"></i></span><span>Poster</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                    <a href="#" class="button">
+                        <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                    <a href="#" class="button">
+                        <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
+                    </a>
+                </span>
+            </div>
+
+            <div class="hero-teaser">
+                <img src="images/teaser-feed-transformation-blowup.png" alt="Teaser">
+                <p style="text-align: center; font-size: 0.95rem; color: #666; margin-top: 0.8rem; padding: 0 2rem; font-family: var(--font-serif);">
+                    <strong>DIY-MOD Paradigm:</strong> A user recovering from an eating disorder creates a filter (a).
+                    DIY-MOD identifies triggers (b) and applies transformations (c), such as semantic inpainting, while
+                    marking content with a transparent indicator (d).
+                </p>
+            </div>
+        </header>
+
+        <!-- Abstract -->
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <div class="abstract-content">
+                <p>
+                    Centralized content moderation paradigm both falls short and over-reaches: 1) it fails to account
+                    for the subjective nature of harm, and 2) it acts with blunt suppression in response to content
+                    deemed harmful, even when such content can be salvaged. We first investigate this through formative
+                    interviews, documenting how seemingly benign content becomes harmful due to individual life
+                    experiences. Based on these insights, we developed <strong>DIY-MOD</strong>, a browser extension
+                    that operationalizes a new paradigm: personalized content transformation. Operating on a user's own
+                    definition of harm, DIY-MOD transforms sensitive elements within content in real-time instead of
+                    suppressing the content itself. The system selects the most appropriate transformation for a piece
+                    of content from a diverse palette—from obfuscation to artistic stylizing—to match the user's
+                    specific needs while preserving the content's informational value. Our two-session user study
+                    demonstrates that this approach increases users' sense of agency and safety, enabling them to engage
+                    with content and communities they previously needed to avoid.
+                </p>
+            </div>
+        </section>
+
+        <!-- Transformation Explorer -->
+        <section id="tradeoffs">
+            <h2>Transformation Palette & Trade-offs</h2>
+
+            <div class="explorer-header">
+                <span style="font-weight:600; color:#666;">View Transformations For:</span>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="image">Image</button>
+                    <button class="mode-btn" data-mode="text">Text</button>
+                </div>
+            </div>
+
+            <div class="tradeoff-container">
+                <!-- Sidebar -->
+                <div class="explorer-sidebar" id="schematic-sidebar">
+                    <img src="images/diymod_schematic.png" class="schematic-img" alt="Filter Logic">
+                    <div class="schematic-caption">
+                        Filter config determines <em>what</em> gets transformed.
+                    </div>
+                </div>
+
+                <!-- Main Area -->
+                <div class="tradeoff-main">
+                    <div class="controls-area">
+                        <div class="category-tabs" id="category-tabs">
+                            <div class="category-tab active" data-category="obfuscation">Obfuscation</div>
+                            <div class="category-tab" data-category="semantic">Semantic</div>
+                            <div class="category-tab" data-category="stylistic">Stylistic</div>
+                        </div>
+
+                        <div class="btn-group" id="tradeoff-btn-group">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <div class="result-area">
+                        <div class="visual-box" id="tradeoff-visual-container">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <div class="metrics-box">
+                            <div class="metric-row">
+                                <div class="metric-label"><span>Semantic Fidelity</span><span>Meaning</span></div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill" id="bar-semantic"></div>
+                                </div>
+                            </div>
+                            <div class="metric-row">
+                                <div class="metric-label"><span>Trigger Fidelity</span><span>Safety</span></div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill" id="bar-trigger"></div>
+                                </div>
+                            </div>
+                            <div class="metric-row">
+                                <div class="metric-label"><span>Perceptual Smoothness</span><span>Naturalness</span>
+                                </div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill" id="bar-smoothness"></div>
+                                </div>
+                            </div>
+                            <div id="tradeoff-desc" class="desc-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture (Now separate) -->
+        <section id="architecture">
+            <h2>System Architecture</h2>
+            <div style="text-align:center; margin: 3rem 0;">
+                <img src="images/pipeline_grey.png" class="arch-img" alt="Pipeline">
+                    <p style="text-align: center; font-size: 0.95rem; color: #666; margin-top: 0.8rem; padding: 0 2rem; font-family: var(--font-serif);">
+                    DIY-MOD's <strong>two-stage</strong> intervention selection pipeline. Content matching user filters enters Stage 1 (pruning) to identify
+promising interventions, then Stage 2 generates and scores K candidates before selecting the best transformation. Non-matching
+content bypasses the pipeline entirely.
+                </p>
+            </div>
+        </section>
+
+        <!-- Findings & Implications (After Architecture, independent cards) -->
+        <section id="findings">
+            <h2>Findings & Implications</h2>
+            <div class="findings-grid">
+                <!-- Card 1 -->
+                <div class="expand-card card-color-1">
+                    <div class="card-header">
+                        <span class="card-title">A Newfound Sense of Agency</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Users felt empowered and safer. One participant noted:</p>
+                        <blockquote style="border-left:3px solid var(--accent-color); padding-left:1rem; color:#555; font-style:italic;">
+                            “The ball is now in my court.” — P9
+                        </blockquote>
+                        <p>Moving from passive censorship to active remodeling gave users control over their digital environment.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="expand-card card-color-2">
+                    <div class="card-header">
+                        <span class="card-title">Enabling Grassroots Sharing</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>There was a strong desire to share filters with trusted others. Users wanted to reduce the
+                            individual burden of configuration by adopting community-created safety standards.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="expand-card card-color-3">
+                    <div class="card-header">
+                        <span class="card-title">Implications for Platforms</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Transformation enables users to engage with content they would otherwise avoid entirely.
+                            Safer users are more engaged users. This suggests platforms should offer transformation APIs
+                            rather than just binary takedowns.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="expand-card card-color-4">
+                    <div class="card-header">
+                        <span class="card-title">Alignment with User Preference</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>For image interventions (log-odds = 0.53, <em>p</em> = .033), participants consistently chose
+                            the system’s top candidate. For text interventions, the alignment was even stronger
+                            (log-odds = 1.33, <em>p</em> < .001).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Scenarios (Card Style now) -->
+        <section id="scenarios">
+            <h2>Usage Scenarios</h2>
+            <div class="findings-grid"> <!-- Reusing the grid class for similar layout -->
+                <!-- Added 'open' class by default -->
+                <div class="expand-card card-color-1 open">
+                    <div class="card-header">
+                        <span class="card-title">Exposure Therapy in the Wild</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>DIY-MOD allows users to practice "micro-exposures" in daily browsing by gradually reducing
+                        transformation intensity (e.g., from Occlusion to Stylistic) as they build resilience.</p>
+                    </div>
+                </div>
+                
+                <!-- Added 'open' class by default -->
+                <div class="expand-card card-color-2 open">
+                    <div class="card-header">
+                        <span class="card-title">Bridging Civic Discourse</span>
+                        <i class="fas fa-chevron-down card-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>By obfuscating only toxic phrases while keeping the core argument, DIY-MOD helps users remain in
+                        difficult conversations without being overwhelmed by hostility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation -->
+        <section id="citation">
+            <h2>Citation</h2>
+            <pre style="background:#f4f4f4; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem;"><code>@article{rashed2025diymod,
+  title={What If Moderation Didn't Mean Suppression? A Case for Personalized Content Transformation},
+  author={Rashed, Rayhan and Jahanbakhsh, Farnaz},
+  journal={arXiv preprint arXiv:2509.22861},
+  year={2025}
+}</code></pre>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 University of Michigan. <br>Designed for the DIY-MOD Project.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
