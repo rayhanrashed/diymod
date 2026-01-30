@@ -31,7 +31,7 @@ const transformationData = [
         name: 'Inpainting',
         input: 'images/original.jpg',
         output: 'images/inpainting.jpg',
-        metrics: { semantic: 30, trigger: 5, smoothness: 95 },
+        metrics: { semantic: 30, trigger: 5, smoothness: 85 },
         description: "<strong>Inpainting</strong>: Removes the object and reconstructs the background. Creates a new plausible reality where the object never existed—very smooth but significantly alters semantic truth."
     },
     {
@@ -41,18 +41,8 @@ const transformationData = [
         name: 'Visual Euphemism',
         input: 'images/original.jpg',
         output: 'images/replacement.jpg',
-        metrics: { semantic: 25, trigger: 5, smoothness: 85 },
+        metrics: { semantic: 35, trigger: 5, smoothness: 77 },
         description: "<strong>Visual Euphemism</strong>: Replaces the triggering object with a benign alternative. Produces a visually coherent image but changes the meaning substantially."
-    },
-    {
-        id: 'pointillism',
-        category: 'stylistic',
-        type: 'image',
-        name: 'Pointillism',
-        input: 'images/original.jpg',
-        output: 'images/download (15)_pointillism.png',
-        metrics: { semantic: 70, trigger: 45, smoothness: 65 },
-        description: "<strong>Pointillism</strong>: Applies a dot-based artistic style. A middle ground—reduces photorealism (lowering trigger intensity) while keeping structural context visible."
     },
     {
         id: 'ghibli',
@@ -61,9 +51,20 @@ const transformationData = [
         name: 'Studio Ghibli',
         input: 'images/original.jpg',
         output: 'images/ghibli.jpg',
-        metrics: { semantic: 70, trigger: 35, smoothness: 70 },
+        metrics: { semantic: 70, trigger: 50, smoothness: 70 },
         description: "<strong>Studio Ghibli Style</strong>: Whimsical, animated rendering. Reduces harshness of reality with warmer colors and softer edges, lending a tone of warmth while preserving structure."
     },
+    {
+        id: 'impressionism',
+        category: 'stylistic',
+        type: 'image',
+        name: 'Impressionism',
+        input: 'images/original.jpg',
+        output: 'images/impressionism.jpg',
+        metrics: { semantic: 50, trigger: 35, smoothness: 55 },
+        description: "<strong>Impressionism</strong>: Renders the image in an impressionist painting style to obscure details. Creates conceptual distance by reducing photorealism while preserving the scene's structure and context."
+    },
+
 
     // --- TEXT ---
     // Examples contextualized for eating disorder filter:
