@@ -24,11 +24,33 @@ function initExplorer() {
   });
 
   // 3. New Card Expansion Logic (Findings & Scenarios)
-  // Replaces the old '.finding-card' logic
-  document.querySelectorAll('.expand-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Toggle 'open' class on the clicked card
-      card.classList.toggle('open');
+  // On desktop (2-col): open both cards in the same row
+  // On mobile (1-col): toggle only the clicked card
+  document.querySelectorAll('.findings-grid').forEach(grid => {
+    const cards = grid.querySelectorAll('.expand-card');
+    cards.forEach((card, index) => {
+      card.addEventListener('click', (e) => {
+        const isCurrentlyOpen = card.classList.contains('open');
+        const isMobile = window.innerWidth <= 800;
+        
+        if (isMobile) {
+          // Mobile: toggle only the clicked card
+          card.classList.toggle('open');
+        } else {
+          // Desktop: toggle both cards in the same row
+          const rowIndex = Math.floor(index / 2);
+          const rowStart = rowIndex * 2;
+          const rowEnd = Math.min(rowStart + 2, cards.length);
+          
+          for (let i = rowStart; i < rowEnd; i++) {
+            if (isCurrentlyOpen) {
+              cards[i].classList.remove('open');
+            } else {
+              cards[i].classList.add('open');
+            }
+          }
+        }
+      });
     });
   });
 
@@ -145,23 +167,29 @@ function selectTransformation(id) {
   }
 
   // Update Metrics
-  updateBar('bar-semantic', data.metrics.semantic);
-  updateBar('bar-trigger', data.metrics.trigger);
-  updateBar('bar-smoothness', data.metrics.smoothness);
+  updateBar('bar-semantic', data.metrics.semantic, false);
+  updateBar('bar-trigger', data.metrics.trigger, true);  // inverted: lower is better
+  updateBar('bar-smoothness', data.metrics.smoothness, false);
 
   // Update Description
   const desc = document.getElementById('tradeoff-desc');
   if (desc) desc.innerHTML = data.description;
 }
 
-function updateBar(id, value) {
+function updateBar(id, value, inverted = false) {
   const bar = document.getElementById(id);
   if (bar) {
     bar.style.width = value + '%';
-    // Color coding logic
-    if (value >= 80) bar.style.backgroundColor = '#2ecc71';      // green
-    else if (value <= 40) bar.style.backgroundColor = '#e74c3c'; // red
-    else bar.style.backgroundColor = '#3498db';                  // blue
+    // Color coding logic - inverted for trigger fidelity (lower is better)
+    if (inverted) {
+      if (value <= 20) bar.style.backgroundColor = '#2ecc71';      // green (low = good)
+      else if (value >= 60) bar.style.backgroundColor = '#e74c3c'; // red (high = bad)
+      else bar.style.backgroundColor = '#f39c12';                  // orange (mid)
+    } else {
+      if (value >= 80) bar.style.backgroundColor = '#2ecc71';      // green
+      else if (value <= 40) bar.style.backgroundColor = '#e74c3c'; // red
+      else bar.style.backgroundColor = '#3498db';                  // blue
+    }
   }
 }
 

@@ -108,9 +108,30 @@ transforms only content matching the user’s filters while leaving other posts 
             </div>
         </section>
 
+        <!-- Demo Section (moved up) -->
+        <section id="demo">
+            <h2>System Demo</h2>
+            <div class="demo-container">
+                <video controls class="demo-video">
+                    <source src="images/DIY-MOD-Demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="demo-caption">Watch DIY-MOD in action: creating personalized filters and seeing real-time content transformation on a Reddit feed.</p>
+            </div>
+        </section>
+
         <!-- Transformation Explorer -->
         <section id="tradeoffs">
             <h2>Transformation Palette & Trade-offs</h2>
+
+            <div class="tradeoff-explainer">
+                <p>Every transformation navigates trade-offs between three competing dimensions:</p>
+                <ul class="tradeoff-dimensions">
+                    <li><strong>Semantic Fidelity</strong> — How faithful is the result to the original meaning?</li>
+                    <li><strong>Trigger Fidelity</strong> — How much of the distressing element remains? (Lower = Safer)</li>
+                    <li><strong>Perceptual Smoothness</strong> — How natural does the result look?</li>
+                </ul>
+            </div>
 
             <div class="explorer-header">
                 <span style="font-weight:600; color:#666;">View Transformations For:</span>
@@ -121,6 +142,12 @@ transforms only content matching the user’s filters while leaving other posts 
             </div>
 
             <div class="tradeoff-container tradeoff-no-sidebar">
+                <!-- Filter Context - Inside the box -->
+                <div class="filter-context-inline">
+                    <span class="filter-label">Filter Description:</span> <span class="filter-text">"I have an eating disorder that I'm trying to manage. 
+                        Food pictures trigger cravings and obsessive thoughts I can't control."</span>
+                </div>
+                
                 <!-- Main Area -->
                 <div class="tradeoff-main">
                     <div class="controls-area">
@@ -142,20 +169,19 @@ transforms only content matching the user’s filters while leaving other posts 
 
                         <div class="metrics-box">
                             <div class="metric-row">
-                                <div class="metric-label"><span>Semantic Fidelity</span><span>Meaning</span></div>
+                                <div class="metric-label"><span>Semantic Fidelity</span><span class="direction-hint"><i class="fas fa-arrow-up"></i></span></div>
                                 <div class="bar-bg">
                                     <div class="bar-fill" id="bar-semantic"></div>
                                 </div>
                             </div>
                             <div class="metric-row">
-                                <div class="metric-label"><span>Trigger Fidelity</span><span>Safety</span></div>
+                                <div class="metric-label"><span>Trigger Fidelity</span><span class="direction-hint down"><i class="fas fa-arrow-down"></i></span></div>
                                 <div class="bar-bg">
                                     <div class="bar-fill" id="bar-trigger"></div>
                                 </div>
                             </div>
                             <div class="metric-row">
-                                <div class="metric-label"><span>Perceptual Smoothness</span><span>Naturalness</span>
-                                </div>
+                                <div class="metric-label"><span>Perceptual Smoothness</span><span class="direction-hint"><i class="fas fa-arrow-up"></i></span></div>
                                 <div class="bar-bg">
                                     <div class="bar-fill" id="bar-smoothness"></div>
                                 </div>
@@ -165,6 +191,7 @@ transforms only content matching the user’s filters while leaving other posts 
                     </div>
                 </div>
             </div>
+            <p class="examples-note">These are select examples from our paper. For the full palette of transformations, see <a href="https://arxiv.org/abs/2509.22861" target="_blank">the paper</a>.</p>
         </section>
 
         <!-- System Architecture (Now separate) -->
@@ -246,7 +273,7 @@ content bypasses the pipeline entirely.
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>DIY-MOD's adjustable sensitivity levels and time-bounded filters mirror graduated exposure principles used in therapy. Future work could explore how these mechanisms might complement clinical practices—allowing users to optionally decrease transformation intensity over time as they build resilience.</p>
+                        <p>Adjustable sensitivity and time-bounded filters echo graduated exposure therapy. What if users could dial down protection as they build resilience—turning everyday browsing into structured recovery?</p>
                     </div>
                 </div>
                 
@@ -256,21 +283,9 @@ content bypasses the pipeline entirely.
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>When valuable perspectives are obscured by hostile framing, transformation-based approaches may help. Future research could investigate whether softening confrontational language while preserving core arguments enables more constructive engagement across ideological divides.</p>
+                        <p>Valuable perspectives often hide behind hostile framing. Could softening confrontational language—while preserving core arguments—help people engage across ideological divides instead of retreating to echo chambers?</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Demo Section -->
-        <section id="demo">
-            <h2>System Demo</h2>
-            <div class="demo-container">
-                <video controls class="demo-video">
-                    <source src="images/DIY-MOD-Demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p class="demo-caption">Watch DIY-MOD in action: creating personalized filters and seeing real-time content transformation on a Reddit feed.</p>
             </div>
         </section>
 
