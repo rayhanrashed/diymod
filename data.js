@@ -6,7 +6,7 @@ const transformationData = [
         type: 'image',
         name: 'Occlusion',
         input: 'images/original.jpg',
-        output: 'images/occlusion.png',
+        output: 'images/occlusion.jpg',
         metrics: { semantic: 80, trigger: 0, smoothness: 10 },
         description: "<strong>Occlusion</strong>: Draws a solid shape over the sensitive region. Minimizes trigger fidelity (high safety) but has very low smoothness (looks edited) and hides local information."
     },
@@ -16,7 +16,7 @@ const transformationData = [
         type: 'image',
         name: 'Blur',
         input: 'images/original.jpg',
-        output: 'images/blur.png',
+        output: 'images/blur.jpg',
         metrics: { semantic: 85, trigger: 20, smoothness: 50 },
         description: "<strong>Blur</strong>: Softens the sensitive region. Reduces trigger details while potentially retaining color/shape context. Smoother than occlusion but still visibly edited."
     },
@@ -26,7 +26,7 @@ const transformationData = [
         type: 'image',
         name: 'Inpainting',
         input: 'images/original.jpg',
-        output: 'images/inpainting.png',
+        output: 'images/inpainting.jpg',
         metrics: { semantic: 40, trigger: 5, smoothness: 95 },
         description: "<strong>Inpainting</strong>: Removes the object and reconstructs the background. Extremely smooth and natural-looking, but significantly alters the reality/truth of the image (low semantic fidelity)."
     },
@@ -36,7 +36,7 @@ const transformationData = [
         type: 'image',
         name: 'Visual Euphemism',
         input: 'images/original.jpg',
-        output: 'images/replacement.png',
+        output: 'images/replacement.jpg',
         metrics: { semantic: 30, trigger: 0, smoothness: 90 },
         description: "<strong>Visual Euphemism</strong>: Replaces the triggering object with a benign alternative (e.g., a flower). Maintains high smoothness and composition but changes the meaning."
     },
@@ -56,7 +56,7 @@ const transformationData = [
         type: 'image',
         name: 'Studio Ghibli',
         input: 'images/original.jpg',
-        output: 'images/ghibli.png',
+        output: 'images/ghibli.jpg',
         metrics: { semantic: 65, trigger: 30, smoothness: 75 },
         description: "<strong>Studio Ghibli Style</strong>: A whimsical, animated style. Reduces the harshness of reality using warmer colors and softer edges, lending a tone of warmth."
     },

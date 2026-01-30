@@ -37,49 +37,52 @@
             <div class="authors">
                 <div class="author-block">
                     <div class="author-name">Rayhan Rashed</div>
-                    <div class="author-image"><img src="images/rayhan.png" alt="Rayhan Rashed"></div>
+                    <div class="author-image"><img src="images/rayhan.jpg" alt="Rayhan Rashed"></div>
                 </div>
                 <div class="author-block">
                     <div class="author-name">Farnaz Jahanbakhsh</div>
-                    <div class="author-image"><img src="images/farnaz.png" alt="Farnaz Jahanbakhsh"></div>
+                    <div class="author-image"><img src="images/farnaz.jpg" alt="Farnaz Jahanbakhsh"></div>
                 </div>
             </div>
             <div style="text-align: center; color: #888; font-size: 0.95rem;">University of Michigan</div>
 
             <div class="publication-links">
-                <span class="link-block">
+                <!-- <span class="link-block">
                     <a href="https://arxiv.org/abs/2509.22861" target="_blank" class="button">
                         <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
                     </a>
-                </span>
+                </span> -->
                 <span class="link-block">
                     <a href="https://arxiv.org/abs/2509.22861" target="_blank" class="button">
                         <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
                     </a>
                 </span>
                 <span class="link-block">
-                    <a href="#" class="button">
+                    <a href="./HCAI-Winning-Poster.pdf" class="button">
                         <span class="icon"><i class="fas fa-file-image"></i></span><span>Poster</span>
                     </a>
                 </span>
                 <span class="link-block">
-                    <a href="#" class="button">
-                        <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                    <a href="#" class="button disabled" title="Coming Soon">
+                        <span class="icon"><i class="fab fa-github"></i></span><span>Code</span><span class="coming-soon-badge">Soon</span>
                     </a>
                 </span>
                 <span class="link-block">
-                    <a href="#" class="button">
+                    <a href="#demo" class="button">
                         <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
                     </a>
                 </span>
             </div>
 
             <div class="hero-teaser">
-                <img src="images/teaser-feed-transformation-blowup.png" alt="Teaser">
-                <p style="text-align: center; font-size: 0.95rem; color: #666; margin-top: 0.8rem; padding: 0 2rem; font-family: var(--font-serif);">
-                    <strong>DIY-MOD Paradigm:</strong> A user recovering from an eating disorder creates a filter (a).
-                    DIY-MOD identifies triggers (b) and applies transformations (c), such as semantic inpainting, while
-                    marking content with a transparent indicator (d).
+                <img src="images/teaser-feed-transformation-blowup.jpg" alt="Teaser">
+                <p style="text-align: center; font-size: 1rem; color: #666; margin-top: 0.8rem; padding: 0 2rem; font-family: var(--font-serif);">
+                    <strong>DIY-MOD</strong> enables personalized content transformation based on individual sensitivities. A user recovering from “eating
+disorder” creates a filter (a) specifying that food imagery triggers harmful thoughts. When browsing Reddit’s original feed
+(center), DIY-MOD identifies matching posts and applies context-appropriate transformations (right): <strong>(b)</strong> semantic inpainting,
+which preserves the social dining context while obscuring food details; and <strong>(c)</strong> stylistic alteration, which renders the food bowl
+as an impressionist style painting to obscure details. A transparency indicator <strong>(d)</strong> marks all modified content. The system
+transforms only content matching the user’s filters while leaving other posts unchanged.
                 </p>
             </div>
         </header>
@@ -117,15 +120,7 @@
                 </div>
             </div>
 
-            <div class="tradeoff-container">
-                <!-- Sidebar -->
-                <div class="explorer-sidebar" id="schematic-sidebar">
-                    <img src="images/diymod_schematic.png" class="schematic-img" alt="Filter Logic">
-                    <div class="schematic-caption">
-                        Filter config determines <em>what</em> gets transformed.
-                    </div>
-                </div>
-
+            <div class="tradeoff-container tradeoff-no-sidebar">
                 <!-- Main Area -->
                 <div class="tradeoff-main">
                     <div class="controls-area">
@@ -207,25 +202,22 @@ content bypasses the pipeline entirely.
                 <!-- Card 2 -->
                 <div class="expand-card card-color-2">
                     <div class="card-header">
-                        <span class="card-title">Enabling Grassroots Sharing</span>
+                        <span class="card-title">Grassroots Filter Sharing</span>
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>There was a strong desire to share filters with trusted others. Users wanted to reduce the
-                            individual burden of configuration by adopting community-created safety standards.</p>
+                        <p>Participants wanted to share filter configurations with trusted others—particularly for intergenerational care (e.g., helping a parent with a shared phobia). This points toward community-driven safety standards that reduce individual setup burden.</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="expand-card card-color-3">
                     <div class="card-header">
-                        <span class="card-title">Implications for Platforms</span>
+                        <span class="card-title">Platform Integration</span>
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>Transformation enables users to engage with content they would otherwise avoid entirely.
-                            Safer users are more engaged users. This suggests platforms should offer transformation APIs
-                            rather than just binary takedowns.</p>
+                        <p>Platforms already have the infrastructure for personalization (ad targeting, safety interventions). Integrating transformation-based moderation could help users stay engaged with communities they would otherwise abandon—safer users are more active users.</p>
                     </div>
                 </div>
 
@@ -244,33 +236,41 @@ content bypasses the pipeline entirely.
             </div>
         </section>
 
-        <!-- Usage Scenarios (Card Style now) -->
+        <!-- Future Directions (Card Style) -->
         <section id="scenarios">
-            <h2>Usage Scenarios</h2>
-            <div class="findings-grid"> <!-- Reusing the grid class for similar layout -->
-                <!-- Added 'open' class by default -->
+            <h2>Future Directions</h2>
+            <div class="findings-grid">
                 <div class="expand-card card-color-1 open">
                     <div class="card-header">
-                        <span class="card-title">Exposure Therapy in the Wild</span>
+                        <span class="card-title">Therapeutic Applications</span>
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>DIY-MOD allows users to practice "micro-exposures" in daily browsing by gradually reducing
-                        transformation intensity (e.g., from Occlusion to Stylistic) as they build resilience.</p>
+                        <p>DIY-MOD's adjustable sensitivity levels and time-bounded filters mirror graduated exposure principles used in therapy. Future work could explore how these mechanisms might complement clinical practices—allowing users to optionally decrease transformation intensity over time as they build resilience.</p>
                     </div>
                 </div>
                 
-                <!-- Added 'open' class by default -->
                 <div class="expand-card card-color-2 open">
                     <div class="card-header">
-                        <span class="card-title">Bridging Civic Discourse</span>
+                        <span class="card-title">Civic & Political Discourse</span>
                         <i class="fas fa-chevron-down card-icon"></i>
                     </div>
                     <div class="card-body">
-                        <p>By obfuscating only toxic phrases while keeping the core argument, DIY-MOD helps users remain in
-                        difficult conversations without being overwhelmed by hostility.</p>
+                        <p>When valuable perspectives are obscured by hostile framing, transformation-based approaches may help. Future research could investigate whether softening confrontational language while preserving core arguments enables more constructive engagement across ideological divides.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo">
+            <h2>System Demo</h2>
+            <div class="demo-container">
+                <video controls class="demo-video">
+                    <source src="images/DIY-MOD-Demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="demo-caption">Watch DIY-MOD in action: creating personalized filters and seeing real-time content transformation on a Reddit feed.</p>
             </div>
         </section>
 
