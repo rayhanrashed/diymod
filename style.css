@@ -666,8 +666,18 @@ footer {
         padding: 1.5rem;
     }
 
+    /* Fix: Reduce excessive horizontal padding for mobile */
+    .filter-context-inline {
+        padding: 1rem 1.5rem;
+    }
+
     .tradeoff-container {
         flex-direction: column;
+    }
+
+    /* Fix: Reduce padding for main content area on mobile */
+    .tradeoff-container .tradeoff-main {
+        padding: 0.5rem 1rem 1.5rem 1rem;
     }
 
     .explorer-sidebar {
@@ -677,11 +687,89 @@ footer {
         margin-bottom: 1rem;
     }
 
+    /* Fix: Reduce gap between category tabs on mobile */
+    .category-tabs {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .category-tab {
+        font-size: 0.9rem;
+    }
+
     .result-area {
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Fix: Reduce min-height for visual box on mobile */
+    .visual-box {
+        min-height: 180px;
+    }
+
+    /* Fix: Reduce padding for metrics box on mobile */
+    .metrics-box {
+        padding: 1rem;
     }
 
     .findings-grid, .usage-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Fix: Reduce explorer header gap on mobile */
+    .explorer-header {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    /* Fix: Reduce button padding on mobile */
+    .tradeoff-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-group {
+        gap: 0.5rem;
+    }
+}
+
+/* Extra small screens (phones < 480px) */
+@media (max-width: 480px) {
+    .filter-context-inline {
+        padding: 0.8rem 1rem;
+    }
+
+    .tradeoff-container .tradeoff-main {
+        padding: 0.5rem 0.75rem 1rem 0.75rem;
+    }
+
+    .category-tabs {
+        gap: 0.5rem;
+    }
+
+    .category-tab {
+        font-size: 0.85rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .tradeoff-btn {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .visual-box {
+        min-height: 150px;
+    }
+
+    .metrics-box {
+        padding: 0.8rem;
+    }
+
+    .metric-label {
+        font-size: 0.8rem;
+    }
+
+    .desc-text {
+        font-size: 0.85rem;
     }
 }
