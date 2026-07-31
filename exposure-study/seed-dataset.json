@@ -1,0 +1,127 @@
+{
+  "id": "diymod-public-palette-v0",
+  "version": "0.1.0",
+  "title": "DIY-MOD transformation seed set",
+  "description": "A small interface-development dataset spanning three filter cases and several transformation families.",
+  "provenance": "DIY-MOD public palette plus two de-identified prior comparison pairs",
+  "cases": [
+    {
+      "id": "food",
+      "label": "Food imagery",
+      "filterContext": "Food pictures can trigger cravings and obsessive thoughts that the viewer is trying to manage.",
+      "provenance": "Public DIY-MOD paper and website example"
+    },
+    {
+      "id": "birds",
+      "label": "Bird imagery",
+      "filterContext": "Close-up or harmed bird imagery can cause fear or distress for the viewer.",
+      "provenance": "De-identified transformed outputs from a prior DIY-MOD comparison pair"
+    },
+    {
+      "id": "injections",
+      "label": "Needle imagery",
+      "filterContext": "Close-up needle or injection imagery can cause fear or discomfort for the viewer.",
+      "provenance": "De-identified transformed outputs from a prior DIY-MOD comparison pair"
+    }
+  ],
+  "limitations": [
+    "This is a small interface-development seed set, not an exposure-therapy dataset.",
+    "Transformation intensity is not parameterized or measured.",
+    "No prior participant identifiers or preference labels are included.",
+    "The two legacy pairs do not include their original untransformed images."
+  ],
+  "stimuli": [
+    {
+      "id": "food-original",
+      "image": "stimuli/original.jpg",
+      "caseId": "food",
+      "axis": "Baseline",
+      "transformation": "Original",
+      "parameterization": null
+    },
+    {
+      "id": "food-occlusion",
+      "image": "stimuli/occlusion.jpg",
+      "caseId": "food",
+      "axis": "Obfuscation",
+      "transformation": "Occlusion",
+      "parameterization": null
+    },
+    {
+      "id": "food-blur",
+      "image": "stimuli/blur.jpg",
+      "caseId": "food",
+      "axis": "Obfuscation",
+      "transformation": "Blur",
+      "parameterization": null
+    },
+    {
+      "id": "food-inpainting",
+      "image": "stimuli/inpainting.jpg",
+      "caseId": "food",
+      "axis": "Semantic modification",
+      "transformation": "Inpainting",
+      "parameterization": null
+    },
+    {
+      "id": "food-replacement",
+      "image": "stimuli/replacement.jpg",
+      "caseId": "food",
+      "axis": "Semantic modification",
+      "transformation": "Visual euphemism",
+      "parameterization": null
+    },
+    {
+      "id": "food-ghibli",
+      "image": "stimuli/ghibli.jpg",
+      "caseId": "food",
+      "axis": "Stylistic alteration",
+      "transformation": "Ghibli-inspired rendering",
+      "parameterization": null
+    },
+    {
+      "id": "food-impressionism",
+      "image": "stimuli/impressionism.jpg",
+      "caseId": "food",
+      "axis": "Stylistic alteration",
+      "transformation": "Impressionism",
+      "parameterization": null
+    },
+    {
+      "id": "birds-shrink",
+      "image": "stimuli/birds-shrink.png",
+      "caseId": "birds",
+      "legacyPairId": "birds-pair-01",
+      "axis": "Semantic modification",
+      "transformation": "Shrink",
+      "parameterization": null
+    },
+    {
+      "id": "birds-cubism",
+      "image": "stimuli/birds-stylization.png",
+      "caseId": "birds",
+      "legacyPairId": "birds-pair-01",
+      "axis": "Stylistic alteration",
+      "transformation": "Cubist stylization",
+      "parameterization": null
+    },
+    {
+      "id": "injections-stylization",
+      "image": "stimuli/injection-stylization.png",
+      "caseId": "injections",
+      "legacyPairId": "injections-pair-01",
+      "axis": "Stylistic alteration",
+      "transformation": "Artistic stylization",
+      "parameterization": null
+    },
+    {
+      "id": "injections-inpainting",
+      "image": "stimuli/injection-inpainting.png",
+      "caseId": "injections",
+      "legacyPairId": "injections-pair-01",
+      "axis": "Semantic modification",
+      "transformation": "Inpainting",
+      "parameterization": null
+    }
+  ]
+}
